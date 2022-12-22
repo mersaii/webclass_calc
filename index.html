@@ -1,0 +1,66 @@
+<!--Group Members- Simeon Oyebola, Emmanuel Ofori, Mercy Ade-Ige, Praise Nnamonu-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kibo Calculator</title>
+        <style>
+        #calculator {
+            display: grid;
+            max-width: 300px;
+        }
+        .operations {
+            border: black 1px solid;
+            padding: 1px;
+            margin: 1px;
+            max-width: 30px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+    </head>
+    <body>
+        <form id="calculator">
+            <input id="no1" class="numbers" type="number">
+            <input id="no2" class="numbers" type="number">
+            <a href="#" onclick="action(1)" id="plus" class="operations">+</a>
+            <a href="#" onclick="action(2)" id="minus" class="operations">-</a>
+            <!-- <button (onClick)="addition()" class="operations" id="plus">+</button> -->
+            <a href="#" onclick="action(3)" id="multiply" class="operations">x</a>
+            <button onclick="result()" id="equals" class="operations">=</button>
+        </form>
+
+        <p id="answer"></p>
+
+        <script>
+         
+        function action(a){
+            let inputOne = document.getElementById("no1").value;
+            let inputTwo = document.getElementById("no2").value;
+            var answer;
+            let result = document.getElementById("answer");
+            inputOne = parseInt(inputOne)
+            inputTwo = parseInt(inputTwo)
+            if(a==1){
+                answer = inputOne + inputTwo;
+
+            } 
+            else if(a==2){
+                answer = inputOne - inputTwo;
+            }
+            else if(a==3){
+                answer = inputOne * inputTwo;
+            }
+       
+        result.innerText = answer;
+      
+          return answer;
+        }       
+        
+        </script>
+    </body>
+</html>
